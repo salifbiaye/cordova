@@ -1,6 +1,6 @@
 # 📱 Collection d'Applications Mobiles Apache Cordova
 
-Une suite d'applications mobiles hybrides performantes et ergonomiques développées avec **Apache Cordova**, **HTML5**, **CSS3 (Vanilla)**, et **JavaScript (jQuery)**. Ce dépôt comprend également des rapports techniques de présentation ainsi qu'un script de présentation vidéo YouTube.
+Une suite d'applications mobiles hybrides performantes et ergonomiques développées avec **Apache Cordova**, **HTML5**, **CSS3 (Vanilla)**, et **JavaScript (jQuery)**. Ce dépôt comprend également des rapports techniques de présentation.
 
 ---
 
@@ -63,10 +63,7 @@ cordova/
 ├── rapport/                    # Rapports techniques PDF
 │   ├── rapport_todo.pdf           # Rapport compilé en PDF (Todo List)
 │   ├── rapport_contactel.pdf      # Rapport compilé en PDF (Contactel)
-│   ├── rapport_imc.pdf            # Rapport compilé en PDF (Calculateur IMC)
-│   └── script_video_youtube.pdf   # Version PDF du script de présentation
-│
-├── script_video_youtube.md     # Script markdown pour le tournage de la vidéo de démo
+│   └── rapport_imc.pdf            # Rapport compilé en PDF (Calculateur IMC)
 └── README.md                   # Ce fichier
 ```
 
@@ -109,10 +106,7 @@ Pour exécuter l'une des applications (par exemple `todolist`) :
 
 ---
 
-## 📊 Rapports & Vidéo de Présentation
-
-### 📺 Script Vidéo YouTube
-Le fichier [script_video_youtube.md](file:///c:/Users/DELL/Downloads/cordova/script_video_youtube.md) contient le conducteur complet (minutage, scènes à montrer et discours) d'une vidéo de présentation du projet d'environ 5 à 6 minutes.
+## 📊 Rapports
 
 ### 📄 Rapports PDF
 Les rapports techniques de chaque application se trouvent sous format PDF dans le dossier [rapport/](file:///c:/Users/DELL/Downloads/cordova/rapport). Ils détaillent le fonctionnement technique et la conception de chaque application.
