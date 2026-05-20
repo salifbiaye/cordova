@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: https://ssl.gstatic.com https://code.jquery.com https://cdnjs.cloudflare.com 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; font-src 'self' https://cdnjs.cloudflare.com; media-src *; img-src 'self' data: content:;">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <meta name="color-scheme" content="light dark">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <link rel="stylesheet" href="css/index.css">
+        <title>Contactel</title>
+    </head>
+    <body>
+
+        <div id="app">
+            <header>
+                <h1>Contactel</h1>
+                <p id="summary">0 contact(s)</p>
+            </header>
+
+
+            <div id="search-bar">
+                <span class="search-icon">🔍</span>
+                <input type="search" id="search-input" placeholder="Rechercher un contact...">
+            </div>
+
+
+            <div id="filters">
+                <button class="filter-btn active" data-group="all">Tous</button>
+                <button class="filter-btn" data-group="Famille">Famille</button>
+                <button class="filter-btn" data-group="Amis">Amis</button>
+                <button class="filter-btn" data-group="Travail">Travail</button>
+                <button class="filter-btn" data-group="Autre">Autre</button>
+            </div>
+
+
+            <ul id="contact-list"></ul>
+
+
+            <button id="btn-add" title="Ajouter un contact">+</button>
+
+        </div>
+
+
+        <div id="modal-overlay" class="hidden">
+            <div id="modal">
+                <div id="modal-header">
+                    <h2 id="modal-title">Nouveau contact</h2>
+                    <button id="modal-close">✕</button>
+                </div>
+                <div id="modal-body">
+                    <div class="avatar-preview" id="avatar-preview">
+                        <img src="img/contact.png" id="avatar-preview-img" class="avatar-preview-img" alt="contact">
+                        <span id="avatar-preview-initials"></span>
+                    </div>
+
+                    <div class="field">
+                        <label for="f-name">Nom complet *</label>
+                        <input type="text" id="f-name" placeholder="Ex : Saliou Diallo" maxlength="60">
+                    </div>
+                    <div class="field">
+                        <label for="f-phone">Téléphone *</label>
+                        <input type="tel" id="f-phone" placeholder="Ex : +221 77 000 00 00" maxlength="20">
+                    </div>
+                    <div class="field">
+                        <label for="f-email">Email</label>
+                        <input type="email" id="f-email" placeholder="Ex : contact@mail.com" maxlength="80">
+                    </div>
+                    <div class="field">
+                        <label for="f-group">Groupe</label>
+                        <select id="f-group">
+                            <option value="Autre">Autre</option>
+                            <option value="Famille">Famille</option>
+                            <option value="Amis">Amis</option>
+                            <option value="Travail">Travail</option>
+                        </select>
+                    </div>
+                    <p id="form-error" class="hidden">Veuillez remplir les champs obligatoires.</p>
+                </div>
+                <div id="modal-footer">
+                    <button id="btn-cancel">Annuler</button>
+                    <button id="btn-save">Enregistrer</button>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="confirm-overlay" class="hidden">
+            <div id="confirm-box">
+                <p id="confirm-msg">Supprimer ce contact ?</p>
+                <div id="confirm-actions">
+                    <button id="confirm-no">Non</button>
+                    <button id="confirm-yes">Oui, supprimer</button>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <script src="cordova.js"></script>
+        <script src="js/index.js"></script>
+    </body>
+</html>

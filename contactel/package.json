@@ -1,0 +1,23 @@
+{
+  "name": "sn.esp.dgi.dic3.contactel",
+  "displayName": "Contactel",
+  "version": "1.0.0",
+  "description": "Application CRUD de contacts téléphoniques",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ecosystem:cordova"
+  ],
+  "author": "Apache Cordova Team",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "cordova-android": "^13.0.0"
+  },
+  "cordova": {
+    "platforms": [
+      "android"
+    ]
+  }
+}

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: https://ssl.gstatic.com https://code.jquery.com 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://code.jquery.com; media-src *; img-src 'self' data: content:;">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <title>Contact App</title>
+</head>
+<body>
+
+<!-- ===================== PAGE: LISTE ===================== -->
+<div data-role="page" id="page-list">
+
+    <div data-role="header" data-theme="b" data-position="fixed">
+        <h1><img src="img/contact.png" class="header-logo" alt=""> Contact App</h1>
+        <a href="#page-add" data-icon="plus" class="ui-btn-right" data-transition="slide">Ajouter</a>
+    </div>
+
+    <div data-role="content">
+        <!-- Barre de recherche JQM -->
+        <form data-role="controlgroup">
+            <input type="search" id="search-input" placeholder="Rechercher...">
+        </form>
+
+        <!-- Filtre par groupe -->
+        <div data-role="controlgroup" data-type="horizontal" id="filter-bar">
+            <a href="#" class="ui-btn filter-btn ui-btn-active" data-group="all">Tous</a>
+            <a href="#" class="ui-btn filter-btn" data-group="Famille">Famille</a>
+            <a href="#" class="ui-btn filter-btn" data-group="Amis">Amis</a>
+            <a href="#" class="ui-btn filter-btn" data-group="Travail">Travail</a>
+        </div>
+
+        <p id="summary" class="contact-summary">0 contact(s)</p>
+
+        <!-- Listview jQuery Mobile -->
+        <ul id="contact-list" data-role="listview" data-filter="false" data-inset="true" data-autodividers="true">
+        </ul>
+    </div>
+
+    <div data-role="footer" data-position="fixed" data-theme="b">
+        <h4 id="footer-status">Prêt</h4>
+    </div>
+</div>
+
+
+<!-- ===================== PAGE: AJOUTER / MODIFIER ===================== -->
+<div data-role="page" id="page-add">
+
+    <div data-role="header" data-theme="b">
+        <a href="#page-list" data-icon="arrow-l" data-transition="slide" data-direction="reverse">Retour</a>
+        <h1 id="form-title">Nouveau contact</h1>
+    </div>
+
+    <div data-role="content">
+        <div data-role="fieldcontain">
+            <label for="f-name">Nom complet *</label>
+            <input type="text" id="f-name" placeholder="Ex : Saliou Diallo" maxlength="60">
+        </div>
+        <div data-role="fieldcontain">
+            <label for="f-phone">Téléphone *</label>
+            <input type="tel" id="f-phone" placeholder="Ex : +221 77 000 00 00" maxlength="20">
+        </div>
+        <div data-role="fieldcontain">
+            <label for="f-email">Email</label>
+            <input type="email" id="f-email" placeholder="Ex : contact@mail.com" maxlength="80">
+        </div>
+        <div data-role="fieldcontain">
+            <label for="f-group">Groupe</label>
+            <select id="f-group" data-native-menu="false">
+                <option value="Autre">Autre</option>
+                <option value="Famille">Famille</option>
+                <option value="Amis">Amis</option>
+                <option value="Travail">Travail</option>
+            </select>
+        </div>
+
+        <p id="form-error" class="form-error ui-helper-hidden">Veuillez remplir les champs obligatoires.</p>
+
+        <input type="hidden" id="f-id" value="">
+
+        <a href="#" id="btn-save" data-role="button" data-theme="b" data-icon="check">Enregistrer</a>
+        <a href="#page-list" data-role="button" data-theme="a" data-icon="delete" data-transition="slide" data-direction="reverse">Annuler</a>
+    </div>
+</div>
+
+
+<!-- ===================== PAGE: DETAIL CONTACT ===================== -->
+<div data-role="page" id="page-detail">
+
+    <div data-role="header" data-theme="b">
+        <a href="#page-list" data-icon="arrow-l" data-transition="slide" data-direction="reverse">Retour</a>
+        <h1>Détail</h1>
+        <a href="#" id="btn-edit-detail" data-icon="edit" class="ui-btn-right">Modifier</a>
+    </div>
+
+    <div data-role="content">
+        <div id="detail-avatar" class="detail-avatar">
+            <img src="img/contact.png" id="detail-avatar-img" class="detail-avatar-img" alt="">
+            <span id="detail-avatar-initials"></span>
+        </div>
+
+        <ul data-role="listview" data-inset="true" id="detail-list">
+        </ul>
+
+        <a href="#" id="btn-delete-detail" data-role="button" data-theme="b" data-icon="delete">Supprimer</a>
+    </div>
+</div>
+
+
+<!-- ===================== POPUP: CONFIRMATION SUPPRESSION ===================== -->
+<div data-role="popup" id="popup-confirm" data-dismissible="false" data-theme="a">
+    <div data-role="header" data-theme="b">
+        <h1>Confirmation</h1>
+    </div>
+    <div data-role="content">
+        <p id="confirm-msg">Supprimer ce contact ?</p>
+        <a href="#" id="confirm-yes" data-role="button" data-theme="b" data-icon="delete" data-inline="true">Supprimer</a>
+        <a href="#" id="confirm-no"  data-role="button" data-theme="a" data-icon="back"   data-inline="true">Annuler</a>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script src="cordova.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: https://ssl.gstatic.com https://code.jquery.com https://cdnjs.cloudflare.com 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; font-src 'self' https://cdnjs.cloudflare.com; media-src *; img-src 'self' data: content:;">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <meta name="color-scheme" content="light dark">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <link rel="stylesheet" href="css/index.css">
+        <title>Todo List</title>
+    </head>
+    <body>
+
+        <div id="app">
+            <header>
+                <h1>Ma Todo List</h1>
+                <p id="summary">0 tâche restante</p>
+            </header>
+
+            <div id="filters">
+                <button class="filter-btn active" data-filter="all">Toutes</button>
+                <button class="filter-btn" data-filter="active">Actives</button>
+                <button class="filter-btn" data-filter="completed">Terminées</button>
+            </div>
+
+            <ul id="task-list"></ul>
+
+            <div id="footer" style="display:none;">
+                <button id="btn-clear-completed">
+                    <i class="fa-solid fa-trash"></i> Supprimer terminées
+                </button>
+            </div>
+        </div>
+
+        <!-- FAB -->
+        <button id="btn-add" title="Ajouter une tâche">
+            <i class="fa-solid fa-plus"></i>
+        </button>
+
+        <!-- Modal bottom -->
+        <div id="modal-overlay" class="hidden">
+            <div id="modal">
+                <div id="modal-header">
+                    <h2 id="modal-title">Nouvelle tâche</h2>
+                    <button id="modal-close"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+                <div id="modal-body">
+                    <div class="field">
+                        <label for="f-task">Tâche *</label>
+                        <input type="text" id="f-task" placeholder="Ex : Faire les courses" maxlength="100">
+                    </div>
+                    <p id="form-error" class="hidden">Veuillez saisir une tâche.</p>
+                </div>
+                <div id="modal-footer">
+                    <button id="btn-cancel">Annuler</button>
+                    <button id="btn-save"><i class="fa-solid fa-check"></i> Enregistrer</button>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <script src="cordova.js"></script>
+        <script src="js/index.js"></script>
+    </body>
+</html>
