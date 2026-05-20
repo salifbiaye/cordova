@@ -60,7 +60,7 @@ cordova/
 │   ├── package.json
 │   └── www/
 │
-├── rapport/                    # Rapports techniques PDF
+├── rapports/                    # Rapports techniques PDF
 │   ├── rapport_todo.pdf           # Rapport compilé en PDF (Todo List)
 │   ├── rapport_contactel.pdf      # Rapport compilé en PDF (Contactel)
 │   └── rapport_imc.pdf            # Rapport compilé en PDF (Calculateur IMC)
