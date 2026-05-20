@@ -451,28 +451,4 @@ header h1 {
 #btn-save:active { opacity: 0.85; transform: scale(0.97); }
 #btn-save i { pointer-events: none; }
 
-/* ── LIGHT MODE ── */
-@media (prefers-color-scheme: light) {
-    body { background: #f0faf4; color: #0d2016; }
 
-    #filters { background: #fff; border-color: #d1fae5; }
-    .filter-btn { color: #4a8055; border-color: #bbf7d0; }
-
-    .task-item { border-color: #d1fae5; }
-    .task-content { background: #fff; }
-    .task-text { color: #0d2016; }
-    .task-check { border-color: #bbf7d0; }
-
-    #empty-state { color: #86efac; }
-    #empty-state .icon { color: #86efac; }
-
-    #modal { background: #fff; }
-    #modal-header, #modal-footer { border-color: #d1fae5; }
-    #modal-close { background: #f0faf4; color: #4a8055; }
-    #modal-title { color: #0d2016; }
-    .field label { color: #4a8055; }
-    .field input { background: #f0faf4; border-color: #bbf7d0; color: #0d2016; }
-    .field input::placeholder { color: #86efac; }
-    #btn-cancel { border-color: #bbf7d0; color: #4a8055; }
-    #btn-cancel:active { background: #f0faf4; }
-}

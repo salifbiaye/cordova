@@ -318,35 +318,4 @@ header h1 {
     max-width: 280px;
 }
 
-/* ── LIGHT MODE ── */
-@media (prefers-color-scheme: light) {
-    body { background: #f5f3ff; color: #1e0a44; }
 
-    #imc-form, .result {
-        background: #fff;
-        border-color: #ddd6fe;
-        box-shadow: 0 4px 16px rgba(109,40,217,0.08);
-    }
-
-    .field label { color: #7c5cbf; }
-    .field:focus-within label { color: #6d28d9; }
-
-    .field input {
-        background: #f5f3ff;
-        border-color: #ddd6fe;
-        color: #1e0a44;
-    }
-
-    .field input:focus {
-        border-color: #6d28d9;
-        background: #ede9fe;
-    }
-
-    .field-hint { color: #a89dca; }
-    .field-divider { color: #c4b5fd; }
-    .result-advice { color: #7c5cbf; }
-    .result-label-imc { color: #a89dca; }
-    .result-value { color: #1e0a44; }
-
-    header { background: linear-gradient(135deg, #2e1065, #6d28d9, #a78bfa); }
-}
